@@ -1,0 +1,22 @@
+[
+    {
+        "nombre_libro": "Harry Potter y la piedra filosofal. Harry Potter. 1",
+        "resumen": "Con las manos temblorosas, Harry le dio la vuelta al sobre y vio un sello de lacre púrpura con un escudo de armas: un león, un águila, un tejón y una serpiente, que rodeaban una gran letra H.» Harry Potter nunca ha oído hablar de Hogwarts hasta que empiezan a caer cartas en el felpudo del número 4 de Privet Drive. Llevan la dirección escrita con tinta verde en un sobre de pergamino amarillento con un sello de lacre púrpura, y sus horripilantes tíos se apresuran a confiscarlas. Más tarde, el día que Harry cumple once años, Rubeus Hagrid, un hombre gigantesco cuyos ojos brillan como escarabajos negros, irrumpe con una noticia extraordinaria: Harry Potter es un mago, y le han concedido una plaza en el Colegio Hogwarts de Magia y Hechicería. ¡Está a punto de comenzar una aventura increíble!",
+        "image": "img/Libro 1.png"
+    },
+    {
+        "nombre_libro": "Harry Potter y la cámara de los secretos. Harry Potter. 2",
+        "resumen": "La segunda aventura de la fascinante saga de Harry Potter, la serie que cambió el mundo de los libros para siempre. ¡El verano de Harry Potter ha incluido el peor cumpleaños de todos los tiempos, advertencias fatales de un elfo doméstico llamado Dobby y el rescate de los Dursley por parte de su amigo Ron Weasley en un auto volador mágico! De regreso al Colegio Hogwarts de Magia y Hechicería para su segundo año, Harry escucha extraños susurros que resuenan en los pasillos vacíos y luego comienzan los ataques. Los estudiantes se encuentran como convertidos en piedra... Las siniestras predicciones de Dobby parecen hacerse realidad. Estas ediciones clásicas de la serie multipremiada y más vendida a nivel internacional de JK Rowling cuentan con emocionantes chaquetas de Jonny Duddle, que acercan Harry Potter a la próxima generación de lectores jóvenes. Es hora de PASAR LA MAGIA...",
+        "image": "img/Libro 2.png"
+    },
+    {
+        "nombre_libro": "Harry Potter y el prisionero de Azkaban. Harry Potter. 3",
+        "resumen": "Cuando el Autobús Noctámbulo se estrella en la oscuridad y se detiene con un chirrido frente a él, es el comienzo de otro año nada normal en Hogwarts para Harry Potter. Sirius Black, asesino en masa fugitivo y seguidor de Lord Voldemort, está huyendo y dicen que viene tras Harry. En su primera clase de Adivinación, la profesora Trelawney ve un presagio de muerte en las hojas de té de Harry... Pero quizás lo más aterrador de todo son los Dementores que patrullan los terrenos de la escuela, con su beso chupador de almas. Estas nuevas ediciones de la serie clásica, ganadora de múltiples premios y más vendida a nivel internacional, cuentan con nuevas chaquetas de Jonny Duddle que se pueden recoger al instante, con un gran atractivo infantil, para acercar Harry Potter a la próxima generación de lectores. Es hora de PASAR LA MAGIA...",
+        "image": "img/Libro 3.png"
+    },
+    {
+        "nombre_libro": "Harry Potter y las Reliquias de la Muerte. Harry Potter. 7",
+        "resumen": "Harry Potter se está preparando para dejar los Dursley y Privet Drive por última vez. Pero el futuro que le espera está lleno de peligros, no sólo para él, sino para cualquiera que esté cerca de él, y Harry ya ha perdido mucho. Sólo destruyendo los Horrocruxes restantes de Voldemort podrá Harry liberarse y vencer las fuerzas del mal del Señor Oscuro. En esta dramática conclusión de la serie de Harry Potter, Harry debe dejar atrás a sus amigos más leales y, en un último y peligroso viaje, encontrar la fuerza y ​​la voluntad para enfrentar su aterrador destino: una confrontación mortal en la que solo él debe luchar.",
+        "image": "img/Libro 4.png"
+    }
+]

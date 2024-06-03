@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html ng-app="MiAngularApp">
+  <!-- Define la aplicación AngularJS -->
+
+  <head>
+    <!-- Encabezado del documento -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Configuración de codificación de caracteres -->
+    <title>Biblioteca</title>
+    <!-- Título de la página -->
+
+    <!-- Inclusión de bibliotecas externas: AngularJS, jQuery, Bootstrap CSS y Font Awesome CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="Icon" href="./img/logo.jpg" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Inclusión del archivo de controlador JavaScript local -->
+    <script src="controlador.js"></script>
+  </head>
+
+  <body>
+    <!-- Cuerpo del documento -->
+    <div ng-controller="controllerLibro" class="container">
+      <!-- Contenedor principal con el controlador Angular -->
+
+      <!-- Modal de alerta -->
+      <div
+        class="modal fade"
+        id="alertModal"
+        tabindex="-1"
+        aria-labelledby="alertModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" id="alerta">
+          <div class="modal-content">
+            <div class="modal-body">
+              <!-- Alerta con estilo de Bootstrap -->
+              <div
+                class="alert alert-custom"
+                ng-class="alertType"
+                ng-if="alertMessage"
+              >
+                {{ alertMessage }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grupo de búsqueda de libros -->
+      <div class="input-group mb-3 mt-5">
+        <div class="form-container">
+          <div class="form-floating">
+            <!-- Entrada de búsqueda -->
+            <input
+              type="text"
+              ng-model="searchQuery"
+              class="form-control"
+              placeholder="Buscar libro"
+              aria-label="Search"
+              id="floatingInput"
+              aria-describedby="basic-addon1"
+              required
+            />
+            <label for="floatingInput" id="Buscar">Buscar libro</label>
+          </div>
+        </div>
+
+        <!-- Botón para abrir el modal de agregar libro -->
+        <button
+          type="button"
+          class="btn btn-success"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+          id="agregar"
+        >
+          Agregar Libro <i class="fas fa-plus"></i>
+        </button>
+      </div>
+
+      <!-- Línea horizontal -->
+      <hr />
+
+      <!-- Modal de agregar libro -->
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content" id="agregar1">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                Agregar un Libro
+              </h1>
+            </div>
+            <div class="modal-body">
+              <form ng-submit="agregarLibro()">
+                <div class="form-floating mb-3">
+                  <!-- Campo de entrada para el nombre del libro -->
+                  <input
+                    type="text"
+                    ng-model="newBook.nombre_libro"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="Nombre del libro"
+                    required
+                  />
+                  <label for="floatingInput">Nombre del libro</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <!-- Campo de entrada para la sinopsis del libro -->
+                  <input
+                    type="text"
+                    ng-model="newBook.resumen"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="Sinopsis"
+                    required
+                  />
+                  <label for="floatingInput">Sinopsis o Descripcion</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <!-- Campo de entrada para la URL de la imagen del libro -->
+                  <input
+                    type="url"
+                    ng-model="newBook.image"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="URL de la imagen(Ingresa una url valida)"
+                    required
+                  />
+                  <label for="floatingInput"
+                    >URL imagen(Ingresa una url valida)</label
+                  >
+                </div>
+                <div class="modal-footer">
+                  <!-- Botón para cancelar el agregado del libro -->
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cancelar
+                  </button>
+                  <!-- Botón para añadir el libro, habilitado solo si el formulario es válido -->
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                    ng-disabled="!isFormValid()"
+                  >
+                    Añadir Libro
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal de edición de libro -->
+      <div
+        class="modal fade"
+        id="editarLibroModal"
+        tabindex="-1"
+        aria-labelledby="editarLibroModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content" id="editar1">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editarLibroModalLabel">
+                Editar Libro
+              </h5>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-floating mb-3">
+                  <!-- Campo de entrada para editar el nombre del libro -->
+                  <input
+                    type="text"
+                    ng-model="newBook.nombre_libro"
+                    class="form-control"
+                    id="nombreLibro"
+                    required
+                  />
+                  <label for="nombreLibro">Nombre del libro</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <!-- Campo de entrada para editar el resumen del libro -->
+                  <input
+                    type="text"
+                    ng-model="newBook.resumen"
+                    class="form-control"
+                    id="resumenLibro"
+                    required
+                  />
+                  <label for="resumenLibro">Resumen</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <!-- Campo de entrada para editar la URL de la imagen del libro -->
+                  <input
+                    type="url"
+                    ng-model="newBook.image"
+                    class="form-control"
+                    id="imagenLibro"
+                    required
+                    title="Ingrese una URL válida"
+                  />
+                  <label for="imagenLibro"
+                    >URL de la imagen(Ingresa un url valida)</label
+                  >
+                </div>
+                <div class="modal-footer">
+                  <!-- Botón para cancelar la edición del libro -->
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                    ng-click="cancelarEdicion()"
+                    id="cancelar"
+                  >
+                    Cancelar
+                  </button>
+                  <!-- Botón para guardar los cambios del libro, habilitado solo si el formulario es válido y se realizaron ediciones -->
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    ng-click="guardarCambios()"
+                    ng-disabled="!isEdited()"
+                    id="guardar"
+                  >
+                    Guardar Cambios
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección de visualización de libros -->
+      <h1>Libros:</h1>
+      <!-- Título -->
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Grid de columnas para mostrar los libros -->
+        <div
+          class="col h-100"
+          ng-repeat="book in listBook | filter:filtrarLibros"
+          id="body Book"
+        >
+          <!-- Iteración sobre la lista de libros -->
+          <div class="card h-100">
+            <!-- Tarjeta de libro -->
+            <img
+              src="{{book.image}}"
+              class="card-img-top"
+              alt="{{book.nombre_libro}}"
+            />
+            <!-- Imagen del libro -->
+            <div class="card-body">
+              <h5 class="card-title">{{book.nombre_libro}}</h5>
+              <!-- Título del libro -->
+              <p class="card-text">{{book.resumen}}</p>
+              <!-- Resumen del libro -->
+              <!-- Botones para editar y eliminar el libro -->
+              <button
+                ng-click="editarLibro(book)"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#editarLibroModal"
+                id="editar"
+              >
+                <i class="fas fa-edit"></i> Editar Libro
+              </button>
+              <button
+                ng-click="eliminarLibro(book)"
+                class="btn btn-danger"
+                id="eliminar"
+              >
+                <i class="fas fa-trash-alt"></i> Eliminar Libro
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mensaje de alerta si no se encuentran libros -->
+      <div
+        ng-if="(listBook | filter:filtrarLibros).length === 0 && searchQuery !== ''"
+        class="alert alert-danger mt-3"
+        role="alert"
+      >
+        No se encontraron libros que coincidan con "{{ searchQuery }}". Verifica
+        que has escrito bien el nombre del libro o intenta agregando el libro
+        "{{ searchQuery }}".
+      </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+      <div
+        class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top m-3"
+      >
+        <p>&copy; 2024 Todos los derechos reservados. Autor: Joao Urteaga</p>
+        <!-- Derechos de autor -->
+        <!-- Enlaces a redes sociales -->
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3">
+            <a
+              class="link-body-emphasis"
+              href="https://github.com/JOAOTIX"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a
+              class="link-body-emphasis"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=joaourteaga52@gmail.com"
+              target="_blank"
+            >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a
+              class="link-body-emphasis"
+              href="https://www.linkedin.com/in/joao-urteaga-s%C3%A1nchez-a9989526b"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Inclusión de Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <!-- Fin del cuerpo del documento -->
+</html>
+<!-- Fin del documento HTML -->
