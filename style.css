@@ -13,12 +13,20 @@ body {
 .card-body {
   color: #f1e6d2; /* Color del texto */
   background-color: rgb(170, 122, 56); /* Color de fondo */
+  height: 500px; /* Altura fija para el cuerpo de las tarjetas */
+  overflow: auto; /* Agrega desplazamiento vertical si el contenido es demasiado largo */
 }
-
 /* Estilos para la tarjeta */
 .card {
   border: none; /* Eliminar borde */
 }
+/* Estilos para las imágenes dentro de las tarjetas */
+.card img {
+  width: 100%; /* Ancho del 100% para que la imagen se ajuste al contenedor */
+  height: 800px; /* Altura fija para todas las imágenes */
+  object-fit: cover; /* Ajusta la imagen para llenar el contenedor sin deformarla */
+}
+
 
 /* Estilos para el botón de editar */
 #editar {
