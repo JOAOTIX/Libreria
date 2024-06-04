@@ -22,7 +22,7 @@ Este proyecto es una aplicación de biblioteca desarrollada con AngularJS y Boot
 
 ## Estructura del Proyecto
 
-- [`index.html`](index.html): Archivo principal que contiene la estructura HTML de la aplicación.
+- `index.html`: Archivo principal que contiene la estructura HTML de la aplicación.
 - `controlador.js`: Controlador AngularJS que maneja la lógica de la aplicación.
 - `style.css`: Archivo de estilos CSS personalizados.
 - `libros.json`: Archivo JSON que contiene la lista inicial de libros.
