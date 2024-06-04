@@ -33,13 +33,6 @@ Este proyecto es una aplicación de biblioteca desarrollada con AngularJS y Boot
 
 1. **Clonar el repositorio**:
    ```bash
-   git clone https://github.com/tuusuario/tu-repositorio.git
-
-
-## Instalación y Ejecución
-
-1. **Clonar el repositorio**:
-   ```bash
    git clone https://github.com/JOAOTIX/Libreria.git
 2. **Abrir el archivo index.html**:
   Puedes abrir el archivo index.html directamente en tu navegador web.
