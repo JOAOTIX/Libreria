@@ -41,10 +41,10 @@ Este proyecto es una aplicación de biblioteca desarrollada con AngularJS y Boot
   La aplicación requiere acceso a Internet para cargar las bibliotecas externas (AngularJS, jQuery, Bootstrap, Font Awesome).
 
 ## Uso
-**Buscar Libros:** Escribe el nombre del libro en la barra de búsqueda.
-**Agregar Libros:** Haz clic en el botón "Agregar Libro", completa el formulario y haz clic en "Añadir Libro".
-**Editar Libros:** Haz clic en el botón "Editar Libro" del libro que deseas editar, realiza los cambios y haz clic en "Guardar Cambios".
-**Eliminar Libros:** Haz clic en el botón "Eliminar Libro" del libro que deseas eliminar.
+- **Buscar Libros:** Escribe el nombre del libro en la barra de búsqueda.
+- **Agregar Libros:** Haz clic en el botón "Agregar Libro", completa el formulario y haz clic en "Añadir Libro".
+- **Editar Libros:** Haz clic en el botón "Editar Libro" del libro que deseas editar, realiza los cambios y haz clic en "Guardar Cambios".
+- **Eliminar Libros:** Haz clic en el botón "Eliminar Libro" del libro que deseas eliminar.
 
 ## Autor
 
