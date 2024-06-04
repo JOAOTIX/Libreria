@@ -54,5 +54,7 @@ Este proyecto es una aplicación de biblioteca desarrollada con AngularJS y Boot
 - [LinkedIn](https://www.linkedin.com/in/joao-urteaga-s%C3%A1nchez-a9989526b)
 - [Email](mailto:joaourteaga52@gmail.com)
 
-Licencia
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
