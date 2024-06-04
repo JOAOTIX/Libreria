@@ -52,11 +52,14 @@ Este proyecto es una aplicación de biblioteca desarrollada con AngularJS y Boot
 **Agregar Libros:** Haz clic en el botón "Agregar Libro", completa el formulario y haz clic en "Añadir Libro".
 **Editar Libros:** Haz clic en el botón "Editar Libro" del libro que deseas editar, realiza los cambios y haz clic en "Guardar Cambios".
 **Eliminar Libros:** Haz clic en el botón "Eliminar Libro" del libro que deseas eliminar.
-Autor
-Joao Urteaga Sánchez
 
-GitHub
-LinkedIn
-Email
+## Autor
+
+**Joao Urteaga Sánchez**
+
+- [GitHub](https://github.com/JOAOTIX)
+- [LinkedIn](https://www.linkedin.com/in/joao-urteaga-s%C3%A1nchez-a9989526b)
+- [Email](mailto:joaourteaga52@gmail.com)
+
 Licencia
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
